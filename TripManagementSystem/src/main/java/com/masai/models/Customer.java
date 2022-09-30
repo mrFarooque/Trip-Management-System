@@ -21,6 +21,7 @@ public class Customer extends User{
 	private String email;
 	private String address;
 	private String mobile;
+	private String password;;
 	
 	
 	@OneToMany(cascade = CascadeType.ALL)
