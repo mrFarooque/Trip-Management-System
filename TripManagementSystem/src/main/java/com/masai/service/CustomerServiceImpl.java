@@ -34,7 +34,7 @@ public class CustomerServiceImpl implements CustomerService{
 
 
 	@Override
-	public Customer updateUser(Customer customer, String key) {
+	public Customer updateCustomer(Customer customer, String key) {
 		 Optional<CurrentCustomerSession> optCurrcustomer= CustomerSessionDAO.findByUuid(key);
 			
 			if(!optCurrcustomer.isPresent()) {
