@@ -10,6 +10,6 @@ public interface CustomerService {
 	
 public Customer createCustomer(Customer customer);
 	
-	public Customer updateUser(Customer customer, String key);
+	public Customer updateCustomer(Customer customer, String key);
 
 }

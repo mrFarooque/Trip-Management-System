@@ -8,5 +8,5 @@ import com.masai.models.Customer;
 import com.masai.models.LoginData;
 
 public interface CustomerDao extends JpaRepository<Customer,Integer>{
-	public Optional<Customer> findByMobileNo(String string);
+	public Optional<Customer> findByMobile(String string);
 }
