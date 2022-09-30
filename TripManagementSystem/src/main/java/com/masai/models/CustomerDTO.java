@@ -6,7 +6,7 @@ import lombok.Data;
  @Data
 public  class CustomerDTO {
 	@NotNull(message = "Mobile is mandatory")
-	private String mobileNo;
+	private String mobile;
 	
 	
 	@NotNull(message = "Password is mandatory")

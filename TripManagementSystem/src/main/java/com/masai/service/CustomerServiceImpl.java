@@ -24,7 +24,7 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public Customer createCustomer(Customer customer) {
-		Optional<Customer> opt= CustomerDao.findByMobileNo(customer.getMobile());
+		Optional<Customer> opt= CustomerDao.findByMobile(customer.getMobile());
 		
 		if(opt.isPresent()) {
 			System.out.println("User already exist");

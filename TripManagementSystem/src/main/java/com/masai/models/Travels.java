@@ -31,6 +31,4 @@ public class Travels {
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Bus> busList = new ArrayList<>();
 	
-
-	
 }

@@ -8,6 +8,6 @@ import com.masai.models.Admin;
 
 public interface AdminDao extends JpaRepository<Admin, Integer>{
 
-	public Optional<Admin> findByMobileNo(String mobileNo);
+	public Optional<Admin> findByMobile(String mobile);
 
 }

@@ -23,7 +23,7 @@ public class AdminLogInServiceImpl implements AdminLoginService{
 
 	@Override
 	public String logIntoAccount(AdminDTO adminDTO) {
-		Optional<Admin> opt= adminDao.findByMobileNo(adminDTO.getMobileNo());
+		Optional<Admin> opt= adminDao.findByMobile(adminDTO.getMobile());
 		if(!opt.isPresent()) {
 			return "Please enter valid Mobile number!";
 		}

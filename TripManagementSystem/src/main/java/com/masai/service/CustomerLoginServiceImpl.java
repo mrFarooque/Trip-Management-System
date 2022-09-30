@@ -23,7 +23,7 @@ public class CustomerLoginServiceImpl implements CustomerLoginService{
 
 	@Override
 	public String logIntoAccount(CustomerDTO customerDTO) {
-		Optional<Customer> opt= CustomerDao.findByMobileNo(customerDTO.getMobileNo());
+		Optional<Customer> opt= CustomerDao.findByMobile(customerDTO.getMobile());
 		
 		if(!opt.isPresent()) {
 			return "Please enter valid Mobile number!";

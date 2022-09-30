@@ -33,6 +33,4 @@ public class Booking {
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Package> packages = new ArrayList<>();
 	
-	
-	
 }
