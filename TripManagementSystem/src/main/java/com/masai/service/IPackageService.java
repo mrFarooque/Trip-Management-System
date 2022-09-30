@@ -1,5 +1,7 @@
 package com.masai.service;
 
-public interface IPackageService {
+import com.masai.models.Packages;
 
+public interface IPackageService {
+	Packages addPackage(Packages packages)  ;
 }

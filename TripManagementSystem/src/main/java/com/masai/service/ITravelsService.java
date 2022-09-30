@@ -1,5 +1,9 @@
 package com.masai.service;
 
-public interface ITravelsService {
+import com.masai.exceptions.TravelsException;
+import com.masai.models.Travels;
 
+public interface ITravelsService {
+	Travels addTravels(Travels travels);
+	Travels updateTravels(Travels travels) throws TravelsException;
 }

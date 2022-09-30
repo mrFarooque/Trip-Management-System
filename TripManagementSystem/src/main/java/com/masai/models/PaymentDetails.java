@@ -17,7 +17,5 @@ public class PaymentDetails {
 	private String paymentType;
 	private LocalDate paymentTime;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	private Package package1;
 	
 }

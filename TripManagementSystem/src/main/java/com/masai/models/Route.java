@@ -34,10 +34,6 @@ public class Route {
 	
 	@OneToMany(cascade =  CascadeType.ALL)
 	private List<Bus> busList = new ArrayList<>();
-	
-	@OneToMany(cascade =  CascadeType.ALL)
-	private List<TicketDetails> ticketDetailsList = new ArrayList<>();
-	
 
 	
 }

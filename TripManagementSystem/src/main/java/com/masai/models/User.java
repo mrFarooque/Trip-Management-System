@@ -29,16 +29,16 @@ public class User {
 	private String userType;
 	private String password;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	private List<Booking> bookingList = new ArrayList<>();
-	
-	@OneToMany(cascade =  CascadeType.ALL)
-	private List<Route> routeList = new ArrayList<>();
-	
-	@OneToMany(cascade = CascadeType.ALL)
-	private List<Travels> travelsList= new ArrayList<>();
-	
-	@OneToMany(cascade = CascadeType.ALL)
-	List<Bus> busList = new ArrayList<>();
+//	@OneToMany(cascade = CascadeType.ALL)
+//	private List<Booking> bookingList = new ArrayList<>();
+//	
+//	@OneToMany(cascade =  CascadeType.ALL)
+//	private List<Route> routeList = new ArrayList<>();
+//	
+//	@OneToMany(cascade = CascadeType.ALL)
+//	private List<Travels> travelsList= new ArrayList<>();
+//	
+//	@OneToMany(cascade = CascadeType.ALL)
+//	List<Bus> busList = new ArrayList<>();
 	
 }

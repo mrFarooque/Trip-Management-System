@@ -20,7 +20,7 @@ public class AdminServiceImpl implements AdminService{
 	private AdminSessionDAO adminSessionDAO;
 	@Override
 	public Admin createAdmin(Admin admin) {
-		Optional<Admin> opt= adminDao.findByMobileNo(admin.getMobile());
+		Optional<Admin> opt= adminDao.findByMobile(admin.getMobile());
 		
 		if(opt.isPresent()) {
 			System.out.println("User already exist");

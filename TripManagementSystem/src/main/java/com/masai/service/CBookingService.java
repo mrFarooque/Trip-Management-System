@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.masai.exceptions.BookingException;
 import com.masai.exceptions.PackageException;
 import com.masai.models.Booking;
-import com.masai.models.Package;
+import com.masai.models.Packages;
 import com.masai.repository.BookingDao;
 import com.masai.repository.PackageDao;
 
@@ -24,14 +24,14 @@ public class CBookingService implements IBookingService{
 
 	@Override
 	public Booking makeBooking(Booking bookingDetail) throws PackageException {
-		for (Package package1 : bookingDetail.getPackages()) {
-			Optional<Package> pOptional=packageDao.findById(package1.getPackageId());
-			
-			if (pOptional==null) {
-				throw new PackageException("This Package is not Available Right Now!!");
-			}
-		}
-		bookingDao.save(bookingDetail);
+//		for (Packages package1 : bookingDetail.getPackages()) {
+//			Optional<Packages> pOptional=packageDao.findById(package1.getPackageId());
+//			
+//			if (pOptional==null) {
+//				throw new PackageException("This Package is not Available Right Now!!");
+//			}
+//		}
+//		bookingDao.save(bookingDetail);
 		return bookingDetail;
 	}
 

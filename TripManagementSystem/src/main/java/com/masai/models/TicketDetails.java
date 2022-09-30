@@ -1,11 +1,12 @@
 package com.masai.models;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,5 +22,6 @@ public class TicketDetails {
 	private Integer ticketId;
 	private String status;
 	
-	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Route route;
 }
