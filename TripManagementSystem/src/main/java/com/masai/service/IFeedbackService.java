@@ -1,5 +1,17 @@
 package com.masai.service;
 
-public interface IFeedbackService {
+import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+import com.masai.exceptions.CustomerException;
+import com.masai.exceptions.FeedbackException;
+import com.masai.models.Feedback;
+
+@Service
+public interface IFeedbackService {
+	public Feedback addFeedback(Feedback feedback)throws FeedbackException;
+	public Feedback findByFeedbackId(Integer id)throws FeedbackException;
+	public List<Feedback> findByCustomerId(Integer id)throws FeedbackException, CustomerException;
+	public List<Feedback> viewAllFeedback() throws FeedbackException;
 }
