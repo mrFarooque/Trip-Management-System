@@ -29,7 +29,7 @@ public class AdminLogInServiceImpl implements AdminLoginService{
 		}
 		
 		Admin admin1= opt.get();
-		Integer adminId = admin1.getUserId();
+		Integer adminId = admin1.getAdminId();
 		Optional<CurrentAdminSession>  currAdminopt1= adminSessionDAO.findByAdminId(adminId);
 		
 		if(currAdminopt1.isPresent()) {

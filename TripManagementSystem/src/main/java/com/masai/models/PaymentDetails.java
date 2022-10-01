@@ -2,22 +2,23 @@ package com.masai.models;
 
 import java.time.LocalDate;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class PaymentDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer paymentId;
 	private String paymentType;
 	private LocalDate paymentTime;
-	
-	@OneToOne(cascade = CascadeType.ALL)
-	private Package package1;
-	
 }

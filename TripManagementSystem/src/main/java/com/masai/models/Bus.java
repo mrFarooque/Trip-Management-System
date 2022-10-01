@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,5 +27,8 @@ public class Bus {
 	private Integer busNumber;
 	private Integer capacity;
 
+//	@OneToOne(cascade = CascadeType.ALL)
+//	private Travels travels;
+	
 	
 }

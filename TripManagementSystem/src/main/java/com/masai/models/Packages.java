@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Package {
+public class Packages {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer packageId;
@@ -30,12 +30,13 @@ public class Package {
 	private String packageType;
 	private Double packageCost;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	private PaymentDetails paymentDetails;
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<PaymentDetails> paymentDetails = new ArrayList<>();
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Hotel> hotels = new ArrayList<>();
+	
 		
-	@OneToMany(cascade = CascadeType.ALL)
-	private List<TicketDetails> ticketDetails = new ArrayList<>();
+	@OneToOne(cascade = CascadeType.ALL)
+	private TicketDetails ticketDetail;
 }

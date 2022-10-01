@@ -30,7 +30,9 @@ public class Booking {
 	private String description;
 	private LocalDate bookingDate;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	private List<Package> packages = new ArrayList<>();
+	@OneToOne(cascade = CascadeType.ALL)
+	private Packages packages;
+	
+	
 	
 }

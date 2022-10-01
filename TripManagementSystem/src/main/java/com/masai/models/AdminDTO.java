@@ -4,7 +4,6 @@ import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 @Data
-
 public class AdminDTO {
 	@NotNull(message = "Mobile is mandatory")
 	private String mobile;

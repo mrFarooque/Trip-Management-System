@@ -30,7 +30,7 @@ public class CustomerLoginServiceImpl implements CustomerLoginService{
 		}
 		
 		Customer customer1= opt.get();
-		Integer userId = customer1.getUserId();
+		Integer userId = customer1.getCustomerId();
 		Optional<CurrentCustomerSession>  currUseropt1= CustomerSessionDAO.findByUserId(userId);
 		
 		if(currUseropt1.isPresent()) {

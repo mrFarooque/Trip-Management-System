@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.masai.models.CurrentCustomerSession;
 import com.masai.models.Customer;
+import com.masai.models.CustomerDTO;
 import com.masai.models.User;
 import com.masai.repository.CustomerDao;
 import com.masai.repository.CustomerSessionDAO;
@@ -23,13 +24,16 @@ public class CustomerServiceImpl implements CustomerService{
 
 
 	@Override
-	public Customer createCustomer(Customer customer) {
-		Optional<Customer> opt= CustomerDao.findByMobile(customer.getMobile());
+	public Customer createCustomer(CustomerDTO customerDto) {
 		
-		if(opt.isPresent()) {
-			System.out.println("User already exist");
-		}
-		return CustomerDao.save(customer);
+			Customer customer = new Customer();
+			customer.setCustomerName(customerDto.getCustomerName());
+			customer.setPassword(customerDto.getPassword());
+			customer.setMobile(customerDto.getMobile());
+			customer.setEmail(customerDto.getEmail());
+			customer.setAddress(customerDto.getAddress());
+			customer.setUserType("customer");
+			return CustomerDao.save(customer);
 	}
 
 
