@@ -25,6 +25,44 @@ public class Bus {
 	private String busType;
 	private Integer busNumber;
 	private Integer capacity;
+	
+	
+	public String getBusType() {
+		return busType;
+	}
+	public void setBusType(String busType) {
+		this.busType = busType;
+	}
+	public Integer getBusNumber() {
+		return busNumber;
+	}
+	public void setBusNumber(Integer busNumber) {
+		this.busNumber = busNumber;
+	}
+	public Integer getCapacity() {
+		return capacity;
+	}
+	public void setCapacity(Integer capacity) {
+		this.capacity = capacity;
+	}
+	@Override
+	public String toString() {
+		return "Bus [busId=" + busId + ", busType=" + busType + ", busNumber=" + busNumber + ", capacity=" + capacity
+				+ "]";
+	}
+	public Bus(Integer busId, String busType, Integer busNumber, Integer capacity) {
+		super();
+		this.busId = busId;
+		this.busType = busType;
+		this.busNumber = busNumber;
+		this.capacity = capacity;
+	}
+	public Bus() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
+	
+	
 	
 }
