@@ -10,7 +10,7 @@ import com.masai.models.Feedback;
 
 @Service
 public interface IFeedbackService {
-	public Feedback addFeedback(Feedback feedback, Integer id)throws FeedbackException, CustomerException;
+	public Feedback addFeedback(Feedback feedback, Integer id)throws CustomerException;
 	public Feedback findByFeedbackId(Integer id)throws FeedbackException;
 	public List<Feedback> findByCustomerId(Integer id)throws FeedbackException, CustomerException;
 	public List<Feedback> viewAllFeedback() throws FeedbackException;

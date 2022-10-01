@@ -23,19 +23,14 @@ public class FeedbackServiceImpl implements IFeedbackService{
 	private CustomerDao customerDao;
 	
 	@Override
-	public Feedback addFeedback(Feedback feedback, Integer id) throws FeedbackException, CustomerException {
+	public Feedback addFeedback(Feedback feedback, Integer id) throws CustomerException {
 		Optional<Customer> customer = customerDao.findById(id);
 		if(customer.isPresent()) {
 			Customer previousCustomer = customer.get();
 			List<Feedback> feedbackList = previousCustomer.getFeedbacks();
-			Optional<Feedback> previousFeedback = feedbackDao.findById(feedback.getFeedbackId());
-			if(previousFeedback.isPresent()) {
-				throw new FeedbackException("Feedback Already Given!");
-			}else {
-				feedbackList.add(feedback);
-				customerDao.save(previousCustomer);
-				return feedback;
-			}
+			feedbackList.add(feedback);
+			customerDao.save(previousCustomer);
+			return feedback;
 		}else {
 			throw new CustomerException("Customer not found with id : "+id);
 		}	

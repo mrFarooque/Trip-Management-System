@@ -49,7 +49,7 @@ public class CustomerController {
 		return new ResponseEntity<Booking>(booking,HttpStatus.CREATED);
 	}
 	
-	@PutMapping("/feedback")
+	@PostMapping("/feedback/{id}")
 	public ResponseEntity<Feedback> createFeedback(@RequestBody Feedback feedback, @PathVariable Integer id) throws FeedbackException, CustomerException{
 		Feedback savedFeedback = feedbackService.addFeedback(feedback, id);
 		return new ResponseEntity<Feedback>(savedFeedback, HttpStatus.CREATED);	
