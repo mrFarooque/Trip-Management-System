@@ -30,7 +30,7 @@ public class BusController {
 		
 	}
 	@PutMapping("/update")
-	public ResponseEntity<Bus>upDateBus(@RequestBody Bus bus){
+	public ResponseEntity<Bus>upDateBus(@RequestBody Bus bus) throws BusException{
 		Bus buses=busService.upDateBus(bus);
 
 		return new ResponseEntity<Bus>(buses,HttpStatus.CREATED);
@@ -40,7 +40,7 @@ public class BusController {
 	public ResponseEntity<Bus>deleteBus(@RequestBody Bus bus) throws BusException{
 		Bus buses=busService.deleteBus(bus);
 
-		return new ResponseEntity<Bus>(buses,HttpStatus.CREATED);
+		return new ResponseEntity<Bus>(buses,HttpStatus.OK);
 		
 	}
 }
