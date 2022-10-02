@@ -28,10 +28,12 @@ import com.masai.models.BookingDTO;
 import com.masai.models.Customer;
 import com.masai.models.CustomerSigninDTO;
 import com.masai.models.Feedback;
+import com.masai.models.Packages;
 import com.masai.service.CBookingService;
 import com.masai.service.CustomerLoginService;
 import com.masai.service.CustomerService;
 import com.masai.service.IFeedbackService;
+import com.masai.service.IPackageService;
 import com.masai.service.IReportService;
 
 @RestController
@@ -42,6 +44,7 @@ public class CustomerController {
 	@Autowired IFeedbackService feedbackService;
 	@Autowired IReportService reportService;
 	@Autowired CustomerLoginService customerLoginService;
+	@Autowired IPackageService packageService;
 	
 
 //  Fmethod
