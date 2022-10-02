@@ -51,7 +51,7 @@
 * Update the port number, username and password as per your local database config.
 
 ```
-    server.port=8080
+    server.port=8888
 
     spring.datasource.url=jdbc:mysql://localhost:3306/tmsdb;
     spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
@@ -64,9 +64,9 @@
 
 ## API Root Endpoint
 
-`https://localhost:8080/`
+`https://localhost:8888/`
 
-`http://localhost:8080/swagger-ui/`
+`http://localhost:8888/swagger-ui/`
 
 
 ## API Module Endpoints
@@ -107,7 +107,7 @@
 
 ### Sample API Response for Admin Login
 
-`POST   localhost:8080/login/adminlogin`
+`POST   localhost:8888/login/adminlogin`
 
 * Request Body
 
@@ -129,7 +129,7 @@
  <a href="https://drive.google.com/file/d/1KB3J7FqawAWYqBruGV_1c_hid-LyQDIn/view?usp=sharing">**Video Drive Link** </a>
  
  
-### E-R Diagram Of Covid-19 Application
+### E-R Diagram Of Trip Management System Application
 ---
 <img src="https://github.com/mrFarooque/rightful-order-9279/blob/main/ER_Diagram_TMS.jpeg" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage">
 
@@ -178,8 +178,6 @@
 <img src="https://github.com/shivamgarg796/Spring-work/blob/master/Images/Thank-you-word-cloud.jpg?raw=true" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage">
 
 ---
-
-
 
 
 
