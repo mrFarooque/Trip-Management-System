@@ -22,10 +22,20 @@ public class BusServiceImpl implements BusService{
 	}
 
 	@Override
-	public Bus upDateBus(Bus bus) {
+	public Bus upDateBus(Bus bus)throws BusException {
 		Optional<Bus>opt= busDao.findById(bus.getBusNumber());
-		// TODO Auto-generated method stub
-		return busDao.save(bus);
+		if(opt.isPresent()) {
+			Bus updateBuses=opt.get();
+			return busDao.save(bus);
+			
+			
+		}
+		else {
+			throw new BusException("Bus Not Found");
+		}
+		
+	
+	
 	}
 	
 	
@@ -41,9 +51,9 @@ public class BusServiceImpl implements BusService{
 			return deleteBuses;
 		}
 		else {
-			new BusException("Bus Not Found");
+			throw new BusException("Bus Not Found");
 		}
-		return bus;
+		
 		
 	}
 
