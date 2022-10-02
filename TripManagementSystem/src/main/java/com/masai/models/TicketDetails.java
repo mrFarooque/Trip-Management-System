@@ -20,7 +20,7 @@ public class TicketDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer ticketId;
-	private String status;
+	private String status = "not booked";
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Route route;

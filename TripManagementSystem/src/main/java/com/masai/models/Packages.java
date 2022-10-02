@@ -30,11 +30,15 @@ public class Packages {
 	private String packageType;
 	private Double packageCost;
 	
-	@OneToOne
-	private PaymentDetails paymentDetails;
-	
 	@OneToOne(cascade = CascadeType.ALL)
-	private Hotel hotel;
+	private Hotel bookedHotel;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<PaymentDetails> paymentDetails = new ArrayList<>();
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Hotel> hotels = new ArrayList<>();
+	
 		
 	@OneToOne(cascade = CascadeType.ALL)
 	private TicketDetails ticketDetail;

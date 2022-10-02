@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,9 +28,10 @@ public class Booking {
 	private Integer bookingId;
 	private String bookingType;
 	private String bookingTitle;
-	private String description;
 	private LocalDate bookingDate;
 	
+	@Embedded
+	private BookingDescription bookingDescription;
 	@OneToOne(cascade = CascadeType.ALL)
 	private Packages packages;
 	

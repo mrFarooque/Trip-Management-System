@@ -1,15 +1,22 @@
 package com.masai.models;
 
-import javax.validation.constraints.NotNull;
 
 import lombok.Data;
- @Data
+@Data
 public  class CustomerDTO {
-	@NotNull(message = "Mobile is mandatory")
+	//		@NotNull(message = "Mobile is mandatory")
 	private String mobile;
-	
-	
-	@NotNull(message = "Password is mandatory")
+
+
+	//		@NotNull(message = "Password is mandatory")
 	private String password;
-	
+
+	//	private String customerName;
+	//	private String email;
+	//	private String address;
+	//	private String mobile;
+	//	private String password;
+
+
+
 }

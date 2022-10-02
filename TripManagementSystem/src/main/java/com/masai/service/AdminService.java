@@ -1,10 +1,10 @@
 package com.masai.service;
 
 import com.masai.models.Admin;
+import com.masai.models.AdminSigninDTO;
 
 public interface AdminService {
-public Admin createAdmin(Admin admin);
-	
-	public Admin updateAdmin(Admin admin, String key);
+	public Admin createAdmin(AdminSigninDTO adminsiginDto);
+	public Admin updateAdmin(AdminSigninDTO adminsiginDTO, String key);
 }
 
