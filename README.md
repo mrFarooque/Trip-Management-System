@@ -130,7 +130,7 @@
  
 ### E-R Diagram Of Covid-19 Application
 ---
-<img src="https://github.com/shivamgarg796/Spring-work/blob/master/Images/Er-Diagram.jpeg?raw=true" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage">
+<img src="https://github.com/mrFarooque/rightful-order-9279/blob/main/ER_Diagram_TMS.jpeg" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage">
 
 ---
 
