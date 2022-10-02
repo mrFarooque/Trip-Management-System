@@ -20,5 +20,9 @@ public class PaymentDetails {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer paymentId;
 	private String paymentType;
+	private String fullName;
+	private String creditCardNumber;
+	private String securitypincode;
 	private LocalDate paymentTime;
+	
 }

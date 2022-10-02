@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BookingDTO {
 	private Integer packageId;
+	private Integer hotelId;
 	private PaymentDetails paymentDetails;
 }
 

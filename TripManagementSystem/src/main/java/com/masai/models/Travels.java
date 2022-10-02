@@ -27,7 +27,7 @@ public class Travels {
 	private String address;
 	private String contact;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	private List<Bus> busList = new ArrayList<>();
+//	@OneToMany(cascade = CascadeType.ALL)
+//	private List<Bus> busList = new ArrayList<>();
 	
 }

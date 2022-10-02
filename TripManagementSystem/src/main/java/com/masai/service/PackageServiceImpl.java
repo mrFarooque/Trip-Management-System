@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.masai.exceptions.HotelException;
 import com.masai.exceptions.PackageException;
 import com.masai.exceptions.TicketDetailsException;
+import com.masai.models.FullPackageDTO;
 import com.masai.models.Hotel;
 import com.masai.models.PackageDTO;
 import com.masai.models.Packages;
@@ -32,7 +33,19 @@ public class PackageServiceImpl implements IPackageService{
 		packages.setPackageDescription(packageDto.getPackageDescription());
 		return packageDao.save(packages);
 	}
-
+	
+	@Override
+	public Packages addPackage(FullPackageDTO packages) {
+		Packages newPackages = new Packages();
+		newPackages.setPackageName(packages.getPackageName());
+		newPackages.setPackageType(packages.getPackageType());
+		newPackages.setPackageCost(packages.getPackageCost());
+		newPackages.setHotels(packages.getHotels());
+		newPackages.setTicketDetail(packages.getTicketDetail());
+		return packageDao.save(newPackages);
+	}
+	
+	
 	@Override
 	public Packages addHotelToPackage(Integer packageId,Integer hotelId) throws PackageException,HotelException{
 		Optional<Packages> opt = packageDao.findById(packageId);
