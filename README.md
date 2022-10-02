@@ -2,7 +2,7 @@
 # REST API for an Online Trip Management System
 
 * We have developed this REST API for an Online Trip Management System. This API performs all the fundamental CRUD operations of any Trip Management Application platform with user validation at every step.
-* This project is developed by team of 6 Back-end Developers during project week in Masai School. 
+* This project is developed by team of 5 Back-end Developers during project week in Masai School. 
 
 ## Tech Stack
 
@@ -13,6 +13,7 @@
 * Hibernate
 * MySQL
 * Swagger
+* Lombok
 
 ## Modules
 
@@ -25,22 +26,22 @@
 * User and Admin authentication & validation with session uuid having.
 * Admin Features:
     * Administrator Role of the entire application
-    * Only registered admins with valid session token can add/update/delete driver or customer from main database
-    * Admin can access the details of different Appointment, Member ,Vaccine Center ,Vaccine Inventory and Vaccine Ragistration.
+    * Only registered admins with valid session token can add/update/delete bus, route, package, hotels or customer from main database
+    * Admin can access the details of different Users Data, Feedbacks, Reports from the database.
 * User Features:
     * A user can register himself or herself on the platform.
-    * He/She can check the vaccine centres and vaccine availabilty.
-    * If vaccine is available, can book an appointment slot.
-    * After booking an appointment, he will get appointment details for the vaccine dose.    
+    * He/She can check the packages, buses, routes or hotels.
+    * If any package is available, can book a package.
+    * After booking a ticket, he/she will get package & booking details with ticket for his/her trip.    
 
 
 ## Contributors
 
-* [@Tridip Rong](#)
-* [@MD Farooque Ansari](#)
-* [@Saurabh Pragrut]
-* [@Pushpam Kumar]
-* [@Efat Husneara]
+* [@Tridip Rong](https://github.com/TridipRong)
+* [@MD Farooque Ansari](https://github.com/mrFarooque)
+* [@Saurabh Pragrut](https://github.com/SaurabhPagrut)
+* [@Pushpam Kumar](https://github.com/pushpam-386)
+* [@Efat Husneara](https://github.com/efat56)
 
 
 
