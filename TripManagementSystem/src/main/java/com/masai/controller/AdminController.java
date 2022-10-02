@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.masai.models.Admin;
+import com.masai.models.AdminSigninDTO;
 import com.masai.service.AdminService;
 
 @RestController
@@ -17,13 +18,13 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	@PostMapping("/")
-	public Admin saveAdmin(@RequestBody Admin admin) {
+	public Admin saveAdmin(@RequestBody AdminSigninDTO admin) {
 		return adminService.createAdmin(admin);
 	}
 
 	// to update admin by passing key
 	@PutMapping("/update")
-	public Admin updateAdmin(@RequestBody Admin admin, @RequestParam(required = false) String key) {
+	public Admin updateAdmin(@RequestBody AdminSigninDTO admin, @RequestParam(required = false) String key) {
 
 		return adminService.updateAdmin(admin, key);
 	}

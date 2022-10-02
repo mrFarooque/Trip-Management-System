@@ -12,6 +12,8 @@ import com.masai.models.CurrentAdminSession;
 import com.masai.repository.AdminDao;
 import com.masai.repository.AdminSessionDAO;
 
+import net.bytebuddy.utility.RandomString;
+
 @Service
 public class AdminLogInServiceImpl implements AdminLoginService{
 
@@ -24,12 +26,13 @@ public class AdminLogInServiceImpl implements AdminLoginService{
 	@Override
 	public String logIntoAccount(AdminDTO adminDTO) {
 		Optional<Admin> opt= adminDao.findByMobile(adminDTO.getMobile());
+		
 		if(!opt.isPresent()) {
 			return "Please enter valid Mobile number!";
 		}
 		
 		Admin admin1= opt.get();
-		Integer adminId = admin1.getUserId();
+		Integer adminId = admin1.getAdminId();
 		Optional<CurrentAdminSession>  currAdminopt1= adminSessionDAO.findByAdminId(adminId);
 		
 		if(currAdminopt1.isPresent()) {
@@ -38,7 +41,7 @@ public class AdminLogInServiceImpl implements AdminLoginService{
 		
 		if(admin1.getPassword().equals(adminDTO.getPassword())) {
 			
-			String key = RandomString.getRandomNumberString();
+			String key = RandomString.make(6);
 			CurrentAdminSession currentAdminSession = new CurrentAdminSession(adminId, key, LocalDateTime.now());
 			
 			adminSessionDAO.save(currentAdminSession);

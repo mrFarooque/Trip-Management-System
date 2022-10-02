@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.masai.models.Admin;
+import com.masai.models.AdminSigninDTO;
 import com.masai.models.CurrentAdminSession;
+
 import com.masai.repository.AdminDao;
 import com.masai.repository.AdminSessionDAO;
 
@@ -19,8 +21,15 @@ public class AdminServiceImpl implements AdminService{
 	@Autowired
 	private AdminSessionDAO adminSessionDAO;
 	@Override
-	public Admin createAdmin(Admin admin) {
-		Optional<Admin> opt= adminDao.findByMobile(admin.getMobile());
+	public Admin createAdmin(AdminSigninDTO adminsigninDto) {
+		Optional<Admin> opt= adminDao.findByMobile(adminsigninDto.getMobile());
+		 Admin admin = new Admin();
+		 admin.setAdminName(adminsigninDto.getAdminName());
+		 admin.setPassword(adminsigninDto.getPassword());
+		 admin.setMobile(adminsigninDto.getMobile());
+		 admin.setEmail(adminsigninDto.getEmail());
+		 
+		 admin.setUserType("admin");
 		
 		if(opt.isPresent()) {
 			System.out.println("User already exist");
@@ -29,9 +38,15 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public Admin updateAdmin(Admin admin, String key) {
+	public Admin updateAdmin(AdminSigninDTO adminsigninDto, String key) {
 		 Optional<CurrentAdminSession> optCurrAdmin= adminSessionDAO.findByUuid(key);
-			
+		 Admin admin = new Admin();
+		 admin.setAdminName(adminsigninDto.getAdminName());
+		 admin.setPassword(adminsigninDto.getPassword());
+		 admin.setMobile(adminsigninDto.getMobile());
+		 admin.setEmail(adminsigninDto.getEmail());
+		 
+		 admin.setUserType("admin");
 			if(!optCurrAdmin.isPresent()) {
 				
 				throw new RuntimeException("Unauthorised access");

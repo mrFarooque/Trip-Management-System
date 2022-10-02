@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.masai.models.CurrentCustomerSession;
 import com.masai.models.Customer;
-import com.masai.models.User;
+import com.masai.models.CustomerSigninDTO;
 import com.masai.repository.CustomerDao;
 import com.masai.repository.CustomerSessionDAO;
 
@@ -23,9 +23,16 @@ public class CustomerServiceImpl implements CustomerService{
 
 
 	@Override
-	public Customer createCustomer(Customer customer) {
-		Optional<Customer> opt= CustomerDao.findByMobile(customer.getMobile());
-		
+	public Customer createCustomer(CustomerSigninDTO customersigninDto) {
+		Optional<Customer> opt= CustomerDao.findByMobile(customersigninDto.getMobile());
+		Customer customer = new Customer();
+		customer.setCustomerName(customersigninDto.getCustomerName());
+		customer.setPassword(customersigninDto.getPassword());
+		customer.setMobile(customersigninDto.getMobile());
+		customer.setEmail(customersigninDto.getEmail());
+		customer.setAddress(customersigninDto.getAddress());
+		customer.setUserType("customer");
+
 		if(opt.isPresent()) {
 			System.out.println("User already exist");
 		}
@@ -34,9 +41,15 @@ public class CustomerServiceImpl implements CustomerService{
 
 
 	@Override
-	public Customer updateCustomer(Customer customer, String key) {
+	public Customer updateCustomer(CustomerSigninDTO customersigninDto, String key) {
 		 Optional<CurrentCustomerSession> optCurrcustomer= CustomerSessionDAO.findByUuid(key);
-			
+		 Customer customer = new Customer();
+			customer.setCustomerName(customersigninDto.getCustomerName());
+			customer.setPassword(customersigninDto.getPassword());
+			customer.setMobile(customersigninDto.getMobile());
+			customer.setEmail(customersigninDto.getEmail());
+			customer.setAddress(customersigninDto.getAddress());
+			customer.setUserType("customer");
 			if(!optCurrcustomer.isPresent()) {
 				
 				throw new RuntimeException("Unauthorised access");

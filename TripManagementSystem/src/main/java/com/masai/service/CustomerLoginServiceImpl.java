@@ -11,6 +11,8 @@ import com.masai.models.Customer;
 import com.masai.models.CustomerDTO;
 import com.masai.repository.CustomerDao;
 import com.masai.repository.CustomerSessionDAO;
+
+import net.bytebuddy.utility.RandomString;
 @Service
 public class CustomerLoginServiceImpl implements CustomerLoginService{
 	@Autowired
@@ -30,7 +32,7 @@ public class CustomerLoginServiceImpl implements CustomerLoginService{
 		}
 		
 		Customer customer1= opt.get();
-		Integer userId = customer1.getUserId();
+		Integer userId = customer1.getCustomerId();
 		Optional<CurrentCustomerSession>  currUseropt1= CustomerSessionDAO.findByUserId(userId);
 		
 		if(currUseropt1.isPresent()) {
@@ -39,7 +41,7 @@ public class CustomerLoginServiceImpl implements CustomerLoginService{
 		
 		if(customer1.getPassword().equals(customerDTO.getPassword())) {
 			
-			String key = RandomString.getRandomNumberString();
+			String key = RandomString.make(6);
 			CurrentCustomerSession currentUserSession = new CurrentCustomerSession(userId, key, LocalDateTime.now());
 			
 			CustomerSessionDAO.save(currentUserSession);
