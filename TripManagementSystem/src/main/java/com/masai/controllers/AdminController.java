@@ -62,6 +62,24 @@ public class AdminController {
 	public ResponseEntity<Admin> saveAdmin(@Valid @RequestBody AdminSigninDTO admin) {
 		return new ResponseEntity<Admin>(adminService.createAdmin(admin),HttpStatus.OK);
 	}
+	
+	@GetMapping("/packagesViewAll")
+	public ResponseEntity<List<Packages>> viewAllPackages() throws PackageException{
+		List<Packages> packages=packageService.viewAllPackage();
+		return new ResponseEntity<List<Packages>>(packages,HttpStatus.OK);
+	}
+	
+	@GetMapping("/packagesView{packageId}")
+	public ResponseEntity<Packages> searchPackages(@PathVariable int packageId) throws PackageException{
+		Packages packages=packageService.searchPackage(packageId);
+		return new ResponseEntity<Packages>(packages,HttpStatus.OK);
+	}
+	
+	@DeleteMapping("/deletePackage{packageId}")
+	public ResponseEntity<Packages> deletePackageById(@PathVariable int packageId) throws PackageException{
+		Packages packages=packageService.deletePackage(packageId);
+		return new ResponseEntity<Packages>(packages,HttpStatus.OK);
+	}
 
 	// to update admin by passing key	
 	@PutMapping("/update")

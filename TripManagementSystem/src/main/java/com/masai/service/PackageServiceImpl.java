@@ -1,5 +1,6 @@
 package com.masai.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,6 +79,35 @@ public class PackageServiceImpl implements IPackageService{
 			else throw new PackageException("package not found");
 		}
 		else throw new TicketDetailsException("ticket details not found");
+	}
+	
+
+	@Override
+	public Packages deletePackage(int packageId) throws PackageException {
+		Optional<Packages> opackages=packageDao.findById(packageId);
+		if (opackages.isEmpty()) {
+			throw new PackageException("This Package Not Found to Delete"+packageId);
+		}
+		packageDao.delete(opackages.get());
+		return opackages.get();
+	}
+
+	@Override
+	public List<Packages> viewAllPackage() throws PackageException {
+		List<Packages> packages=packageDao.findAll();
+		if (packages.isEmpty()) {
+			throw new PackageException("No Package is There to display");
+		}
+		return packages;
+	}
+
+	@Override
+	public Packages searchPackage(int packageId) throws PackageException {
+		Optional<Packages> opackages=packageDao.findById(packageId);
+		if (opackages.isEmpty()) {
+			throw new PackageException("This Package Not Found to Show"+packageId);
+		}
+		return opackages.get();
 	}
 
 }

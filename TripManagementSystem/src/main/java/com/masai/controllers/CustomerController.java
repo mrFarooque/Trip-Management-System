@@ -89,6 +89,18 @@ public class CustomerController {
 		List<Feedback> feedbackList = feedbackService.findByCustomerId(id);
 		return new ResponseEntity<List<Feedback>>(feedbackList, HttpStatus.OK);
 	}
+	
+	@GetMapping("/packagesViewAll")
+	public ResponseEntity<List<Packages>> viewAllPackages() throws PackageException{
+		List<Packages> packages=packageService.viewAllPackage();
+		return new ResponseEntity<List<Packages>>(packages,HttpStatus.OK);
+	}
+	
+	@GetMapping("/packagesView{packageId}")
+	public ResponseEntity<Packages> searchPackages(@PathVariable int packageId) throws PackageException{
+		Packages packages=packageService.searchPackage(packageId);
+		return new ResponseEntity<Packages>(packages,HttpStatus.OK);
+	}
 
 
 }
